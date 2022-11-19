@@ -12,7 +12,7 @@ import java.util.List;
 public interface PasteLockerRepository extends JpaRepository<PasteLocker, Long> {
     PasteLocker findPasteLockerByHash(String hash);
 
-    @Query(value = "select * from pastes\n" +
+    @Query(value = "select * from pastes " +
     "where is_public = 'true' and lifetime between :timeFrom and :timeTo order by lifetime desc limit :amount",
             nativeQuery = true)
     List<PasteLocker> findListOfPublicAndAlive(

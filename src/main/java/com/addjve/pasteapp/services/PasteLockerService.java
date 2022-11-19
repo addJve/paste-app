@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface PasteLockerService {
     PasteLockerResponse getByHash(String hash);
-    List<PasteLockerResponse> getFirstPublicPasteTemplate();
-    PasteLockerUrlResponse create(PasteLockerRequest request);
+    List<PasteLockerResponse> getFirstPublicPasteLocker();
+    PasteLockerUrlResponse addPasteLocker(PasteLockerRequest request);
 }

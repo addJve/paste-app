@@ -1,6 +1,8 @@
 package com.addjve.pasteapp.model;
 
+
 import lombok.Data;
+
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -17,4 +19,12 @@ public class PasteLocker {
     private String hash;
     private LocalDateTime lifetime;
     private boolean isPublic;
+
+    public PasteLocker(String data, String hash, LocalDateTime lifetime, boolean isPublic) {
+        this.data = data;
+        this.hash = hash;
+        this.lifetime = lifetime;
+        this.isPublic = isPublic;
+    }
+    public PasteLocker() {}
 }

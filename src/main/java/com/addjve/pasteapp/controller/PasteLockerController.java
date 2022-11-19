@@ -16,7 +16,7 @@ public class PasteLockerController {
 
     @GetMapping("/")
     public List<PasteLockerResponse> getPublicPasteList(){
-        return service.getFirstPublicPasteTemplate();
+        return service.getFirstPublicPasteLocker();
     }
 
     @GetMapping("/{hash}")
@@ -26,7 +26,7 @@ public class PasteLockerController {
 
     @PostMapping("/")
     public PasteLockerUrlResponse add(@RequestBody PasteLockerRequest request) {
-       return service.create(request);
+       return service.addPasteLocker(request);
     }
 
 }

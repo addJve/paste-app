@@ -4,7 +4,7 @@ import com.addjve.pasteapp.dto.PasteLockerRequest;
 import com.addjve.pasteapp.dto.PublicStatus;
 import com.addjve.pasteapp.dto.PasteLockerResponse;
 import com.addjve.pasteapp.dto.PasteLockerUrlResponse;
-import com.addjve.pasteapp.configuration.ConfigProperties;
+import com.addjve.pasteapp.configuration.MyConfig;
 import com.addjve.pasteapp.model.PasteLocker;
 import com.addjve.pasteapp.repository.PasteLockerRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +19,7 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 @Transactional
 public class PasteLockerImpl implements PasteLockerService {
-    private final ConfigProperties config;
+    private final MyConfig config;
     private final PasteLockerRepository repository;
 
     private final HashGenerator hashGenerator;
@@ -44,7 +44,7 @@ public class PasteLockerImpl implements PasteLockerService {
 
     public PasteLockerUrlResponse create(PasteLockerRequest request) {
 
-        String hash = this.hashGenerator.generateHash(16);
+        String hash = hashGenerator.generateHash(16);
 
         PasteLocker pasteLocker = new PasteLocker();
         pasteLocker.setData(request.getData());

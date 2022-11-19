@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 @Data
 public class PasteLocker {
     @Id
-    @GeneratedValue(generator="my_generator", strategy = GenerationType.SEQUENCE)
-    @SequenceGenerator(name = "my_generator", sequenceName = "seq_generator", initialValue = 1)
+    @SequenceGenerator(name = "paste_seq", sequenceName = "paste_seq", initialValue = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator="paste_seq")
     private Long id;
     private String data;
     private String hash;
